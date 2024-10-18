@@ -6,31 +6,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const dataBase = {
-  games: [
-    {
-      id: 1,
-      title: "Call of duty MW",
-      year: 2019,
-      price: 60,
-    },
-    {
-      id: 2,
-      title: "Sea of thieves",
-      year: 2018,
-      price: 40,
-    },
-    {
-      id: 3,
-      title: "Minecraft",
-      year: 2012,
-      price: 20,
-    },
-  ],
+  games: {
+    1: { title: "Call of Duty MW", year: 2019, price: 60 },
+    2: { title: "Sea of Thieves", year: 2018, price: 40 },
+    3: { title: "Minecraft", year: 2012, price: 20 },
+  },
 };
 
 app.get("/games", (request, response) => {
-  response.statusCode = 200;
-  response.json(dataBase.games);
+  response.status(200).json(dataBase.json);
 });
 
 app.get("/game/:id", (request, response) => {
