@@ -1,6 +1,6 @@
-const expresponses = requestuire("expresponses");
-const app = expresponses();
-const bodyParser = requestuire("body-parser");
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -14,7 +14,8 @@ const dataBase = {
 };
 
 app.get("/games", (request, response) => {
-  response.status(200).json(dataBase.json);
+  response.status(200).json(dataBase.games);
+  dataBase.games;
 });
 
 app.get("/game/:id", (request, response) => {
@@ -24,7 +25,7 @@ app.get("/game/:id", (request, response) => {
     return response.status(400).send("400 : Bad Request - ID inválido");
   }
 
-  const game = dataBase.games.find((game) => game.id === id);
+  const game = dataBase.games[id];
 
   if (game) {
     return response.status(200).json(game);
@@ -33,63 +34,63 @@ app.get("/game/:id", (request, response) => {
   }
 });
 
-app.post("/game", (request, response) => {
-  const { title, price, year } = request.body;
-  dataBase.games.push({
-    id: 2323,
-    title,
-    price,
-    year,
-  });
-  response.sendStatus(200);
-});
+// app.post("/game", (request, response) => {
+//   const { title, price, year } = request.body;
+//   dataBase.games.push({
+//     id: 2323,
+//     title,
+//     price,
+//     year,
+//   });
+//   response.sendStatus(200);
+// });
 
-app.delete("/game/:id", (request, response) => {
-  if (isNaN(request.params.id)) {
-    response.sendStatus(400);
-  } else {
-    const id = parseInt(request.params.id);
-    const index = dataBase.games.findIndex((g) => g.id == id);
+// app.delete("/game/:id", (request, response) => {
+//   if (isNaN(request.params.id)) {
+//     response.sendStatus(400);
+//   } else {
+//     const id = parseInt(request.params.id);
+//     const index = dataBase.games.findIndex((g) => g.id == id);
 
-    if (index == -1) {
-      response.sendStatus(404);
-    } else {
-      dataBase.games.splice(index, 1);
-      response.sendStatus(200);
-    }
-  }
-});
+//     if (index == -1) {
+//       response.sendStatus(404);
+//     } else {
+//       dataBase.games.splice(index, 1);
+//       response.sendStatus(200);
+//     }
+//   }
+// });
 
-app.put("/game/:id", (request, response) => {
-  if (isNaN(request.params.id)) {
-    response.sendStatus(400);
-  } else {
-    const id = parseInt(request.params.id);
+// app.put("/game/:id", (request, response) => {
+//   if (isNaN(request.params.id)) {
+//     response.sendStatus(400);
+//   } else {
+//     const id = parseInt(request.params.id);
 
-    const game = dataBase.games.find((g) => g.id == id);
+//     const game = dataBase.games.find((g) => g.id == id);
 
-    if (game != undefined) {
-      const { title, price, year } = request.body;
+//     if (game != undefined) {
+//       const { title, price, year } = request.body;
 
-      if (title != undefined) {
-        game.title = title;
-      }
+//       if (title != undefined) {
+//         game.title = title;
+//       }
 
-      if (price != undefined) {
-        game.price = price;
-      }
+//       if (price != undefined) {
+//         game.price = price;
+//       }
 
-      if (year != undefined) {
-        game.year = year;
-      }
+//       if (year != undefined) {
+//         game.year = year;
+//       }
 
-      response.sendStatus(200);
-    } else {
-      response.sendStatus(404);
-    }
-  }
-});
+//       response.sendStatus(200);
+//     } else {
+//       response.sendStatus(404);
+//     }
+//   }
+// });
 
 app.listen(3000, () => {
-  console.log("API Rodando!");
+  console.log("API Rodando na porta 3000");
 });
