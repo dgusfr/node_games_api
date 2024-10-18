@@ -34,20 +34,18 @@ app.get("/games", (request, response) => {
 });
 
 app.get("/game/:id", (request, response) => {
-  if (isNaN(request.params.id)) {
-    response.sendStatus(400);
-    //bad requesrt
-  } else {
-    const id = parseInt(request.params.id);
-    const game = dataBase.games.find((game) => game.id == id);
+  const id = parseInt(request.params.id);
 
-    if (game != undefined) {
-      response.statusCode = 200;
-      response.json(game);
-    } else {
-      response.sendStatus(404);
-      //not found
-    }
+  if (isNaN(id)) {
+    return response.status(400).send("400 : Bad Request - ID inválido");
+  }
+
+  const game = dataBase.games.find((game) => game.id === id);
+
+  if (game) {
+    return response.status(200).json(game);
+  } else {
+    return response.status(404).send("404 : Not Found - Jogo não encontrado");
   }
 });
 
