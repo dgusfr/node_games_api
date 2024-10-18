@@ -5,7 +5,7 @@ const bodyParser = requestuire("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-var dataBase = {
+const dataBase = {
   games: [
     {
       id: 1,
@@ -36,22 +36,23 @@ app.get("/games", (request, response) => {
 app.get("/game/:id", (request, response) => {
   if (isNaN(request.params.id)) {
     response.sendStatus(400);
+    //bad requesrt
   } else {
-    var id = parseInt(request.params.id);
-
-    var game = dataBase.games.find((g) => g.id == id);
+    const id = parseInt(request.params.id);
+    const game = dataBase.games.find((game) => game.id == id);
 
     if (game != undefined) {
       response.statusCode = 200;
       response.json(game);
     } else {
       response.sendStatus(404);
+      //not found
     }
   }
 });
 
 app.post("/game", (request, response) => {
-  var { title, price, year } = request.body;
+  const { title, price, year } = request.body;
   dataBase.games.push({
     id: 2323,
     title,
@@ -65,8 +66,8 @@ app.delete("/game/:id", (request, response) => {
   if (isNaN(request.params.id)) {
     response.sendStatus(400);
   } else {
-    var id = parseInt(request.params.id);
-    var index = dataBase.games.findIndex((g) => g.id == id);
+    const id = parseInt(request.params.id);
+    const index = dataBase.games.findIndex((g) => g.id == id);
 
     if (index == -1) {
       response.sendStatus(404);
@@ -81,12 +82,12 @@ app.put("/game/:id", (request, response) => {
   if (isNaN(request.params.id)) {
     response.sendStatus(400);
   } else {
-    var id = parseInt(request.params.id);
+    const id = parseInt(request.params.id);
 
-    var game = dataBase.games.find((g) => g.id == id);
+    const game = dataBase.games.find((g) => g.id == id);
 
     if (game != undefined) {
-      var { title, price, year } = request.body;
+      const { title, price, year } = request.body;
 
       if (title != undefined) {
         game.title = title;
