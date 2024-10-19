@@ -1,6 +1,6 @@
 # Node.js Games API
 
-Uma API simples para gerenciar jogos, permitindo operações CRUD (Create, Read, Update, Delete) em um banco de dados em memória utilizando Node.js e Express.
+Uma API simples para gerenciar jogos, permitindo operações CRUD (Create, Read, Update, Delete) em um 'banco de dados' em memória utilizando Node.js e Express.
 
 ## Sumário
 
