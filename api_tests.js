@@ -43,3 +43,15 @@ async function addGame(newGame) {
     );
   }
 }
+
+async function updateGame(id, updatedGame) {
+  try {
+    const response = await request.put(`/game/${id}`, updatedGame);
+    console.log(`Jogo com ID ${id} Atualizado:`, response.data);
+  } catch (error) {
+    console.error(
+      `Erro ao atualizar jogo com ID ${id}:`,
+      error.response ? error.response.data : error.message
+    );
+  }
+}
