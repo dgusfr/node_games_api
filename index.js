@@ -38,7 +38,7 @@ app.post("/games", (request, response) => {
   const { title, year, price } = request.body;
   const newId = Object.keys(database.games).length + 1;
 
-  database.games[newId] = { title, year, price };
+  dataBase.games[newId] = { title, year, price };
 
   response
     .status(201)
