@@ -35,12 +35,14 @@ app.get("/game/:id", (request, response) => {
 });
 
 app.post("/games", (request, response) => {
-  const {title, year, price } = request.body;
-  const newId = Object.keys(database.games).length + 1
+  const { title, year, price } = request.body;
+  const newId = Object.keys(database.games).length + 1;
 
-  database.games[newId] = {title, year, price}
+  database.games[newId] = { title, year, price };
 
-  response.status(201).json({ message: "Jogo adicionado com sucesso", id: newId })
+  response
+    .status(201)
+    .json({ message: "Jogo adicionado com sucesso", id: newId });
 });
 
 app.get("/game/:id", (request, response) => {
@@ -67,7 +69,8 @@ app.delete("/game/:id", (request, response) => {
   }
 
   if (dataBase.games[id]) {
-    delete 
+    delete dataBase.games[id];
+    return response.status(200).send("Jogo deletado com sucesso");
   } else {
     return response.status(404).send("404 : Not Found - Jogo não encontrado");
   }
