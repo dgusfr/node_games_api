@@ -155,6 +155,6 @@ node api_tests.js
 
 Isso irá executar uma série de testes para verificar se a API está funcionando corretamente.
 
-# Autor
+## Autor
 
 Desenvolvido por Diego Franco
