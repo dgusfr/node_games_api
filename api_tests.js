@@ -22,11 +22,23 @@ async function getAllGames() {
 
 async function getGameById(id) {
   try {
-    const response = request.get(`/games/${id}`);
+    const response = await request.get(`/games/${id}`);
     console.log(`Detalhes do game com ID ${id}: `, response.data);
   } catch (error) {
     console.error(
       `Erro ao obter jogo com ID ${id}:`,
+      error.response ? error.response.data : error.message
+    );
+  }
+}
+
+async function addGame(newGame) {
+  try {
+    const response = await request.post("/game", newGame);
+    console.log("Novo Jogo Adicionado:", response.data);
+  } catch (error) {
+    console.error(
+      "Erro ao adicionar jogo:",
       error.response ? error.response.data : error.message
     );
   }
