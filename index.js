@@ -41,23 +41,37 @@ app.post("/games", (request, response) => {
   database.games[newId] = {title, year, price}
 
   response.status(201).json({ message: "Jogo adicionado com sucesso", id: newId })
-}
+});
 
-// app.delete("/game/:id", (request, response) => {
-//   if (isNaN(request.params.id)) {
-//     response.sendStatus(400);
-//   } else {
-//     const id = parseInt(request.params.id);
-//     const index = dataBase.games.findIndex((g) => g.id == id);
+app.get("/game/:id", (request, response) => {
+  const id = parseInt(request.params.id);
 
-//     if (index == -1) {
-//       response.sendStatus(404);
-//     } else {
-//       dataBase.games.splice(index, 1);
-//       response.sendStatus(200);
-//     }
-//   }
-// });
+  if (isNaN(id)) {
+    return response.status(400).send("400 : Bad Request - ID inválido");
+  }
+
+  const game = dataBase.games[id];
+
+  if (game) {
+    return response.status(200).json(game);
+  } else {
+    return response.status(404).send("404 : Not Found - Jogo não encontrado");
+  }
+});
+
+app.delete("/game/:id", (request, response) => {
+  const id = parseInt(request.params.id);
+
+  if (isNaN(id)) {
+    return response.status(400).send("400 : Bad Request - ID inválido");
+  }
+
+  if (dataBase.games[id]) {
+    delete 
+  } else {
+    return response.status(404).send("404 : Not Found - Jogo não encontrado");
+  }
+});
 
 // app.put("/game/:id", (request, response) => {
 //   if (isNaN(request.params.id)) {
