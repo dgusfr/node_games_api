@@ -33,7 +33,7 @@ async function getGameById(id) {
 
 async function addGame(newGame) {
   try {
-    const response = await request.post("/game", newGame);
+    const response = await request.post("/games", newGame);
     console.log("Novo Jogo Adicionado:", response.data);
   } catch (error) {
     console.error(
