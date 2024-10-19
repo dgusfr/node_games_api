@@ -1,7 +1,6 @@
 const axios = require("axios");
-const { request, response } = require("express");
 
-const resquest = axios.create({
+const request = axios.create({
   baseURL: "http://localhost:3000",
   headers: {
     "Content-Type": "application/json",
@@ -10,7 +9,7 @@ const resquest = axios.create({
 
 async function getAllGames() {
   try {
-    const response = resquest.get("/games");
+    const response = await request.get("/games");
     console.log("Lista dos games:", response.data);
   } catch (error) {
     console.error(
@@ -22,8 +21,8 @@ async function getAllGames() {
 
 async function getGameById(id) {
   try {
-    const response = await request.get(`/games/${id}`);
-    console.log(`Detalhes do game com ID ${id}: `, response.data);
+    const response = await request.get(`/game/${id}`);
+    console.log(`Detalhes do game com ID ${id}:`, response.data);
   } catch (error) {
     console.error(
       `Erro ao obter jogo com ID ${id}:`,
@@ -58,7 +57,7 @@ async function updateGame(id, updatedGame) {
 
 async function deleteGame(id) {
   try {
-    await response.delete(`/game/${id}`);
+    await request.delete(`/game/${id}`);
     console.log(`Jogo com ID ${id} removido com sucesso.`);
   } catch (error) {
     console.error(
@@ -88,9 +87,9 @@ async function runTests() {
     price: 55,
   };
   await updateGame(1, atualizacaoJogo);
+  await getAllGames();
 
   await deleteGame(1);
-
   await getAllGames();
 
   console.log("Testes concluídos.");
