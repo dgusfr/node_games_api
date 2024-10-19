@@ -2,9 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 
-// Configura o middleware para lidar com requisições URL-encoded
 app.use(bodyParser.urlencoded({ extended: false }));
-// Configura o middleware para lidar com requisições JSON
 app.use(bodyParser.json());
 
 // Banco de dados em memória para armazenar os jogos
@@ -18,7 +16,6 @@ const dataBase = {
 
 // Rota para obter todos os jogos
 app.get("/games", (request, response) => {
-  // Retorna o objeto "games" como resposta em formato JSON
   response.status(200).json(dataBase.games);
 });
 
@@ -26,19 +23,15 @@ app.get("/games", (request, response) => {
 app.get("/game/:id", (request, response) => {
   const id = parseInt(request.params.id);
 
-  // Verifica se o ID é um número válido
   if (isNaN(id)) {
     return response.status(400).send("400 : Bad Request - ID inválido");
   }
 
-  // Busca o jogo com o ID fornecido
   const game = dataBase.games[id];
 
-  // Se o jogo for encontrado, retorna os detalhes do jogo
   if (game) {
     return response.status(200).json(game);
   } else {
-    // Se o jogo não for encontrado, retorna um erro 404
     return response.status(404).send("404 : Not Found - Jogo não encontrado");
   }
 });
@@ -48,10 +41,8 @@ app.post("/games", (request, response) => {
   const { title, year, price } = request.body;
   const newId = Object.keys(dataBase.games).length + 1;
 
-  // Adiciona o novo jogo ao banco de dados com o ID gerado
   dataBase.games[newId] = { title, year, price };
 
-  // Retorna uma mensagem de sucesso e o ID do novo jogo
   response
     .status(201)
     .json({ message: "Jogo adicionado com sucesso", id: newId });
@@ -61,7 +52,6 @@ app.post("/games", (request, response) => {
 app.delete("/game/:id", (request, response) => {
   const id = parseInt(request.params.id);
 
-  // Verifica se o ID é um número válido
   if (isNaN(id)) {
     return response.status(400).send("400 : Bad Request - ID inválido");
   }
