@@ -28,7 +28,9 @@ Uma API simples para gerenciar jogos, permitindo operações CRUD (Create, Read,
 
 ## Descrição
 
-Este projeto é uma API simples desenvolvida com Node.js e Express que permite gerenciar uma lista de jogos. A API suporta operações CRUD (Create, Read, Update, Delete) em um banco de dados em memória para manipular informações de jogos, como título, ano e preço. Ela serve como um exemplo básico para entender como criar uma API REST com Node.js e Express.
+Este projeto é uma API simples desenvolvida com Node.js e Express que permite gerenciar uma lista de jogos.
+
+A API suporta operações CRUD (Create, Read, Update, Delete) em um banco de dados em memória para manipular informações de jogos, como título, ano e preço. Ela serve como um exemplo básico para entender como criar uma API REST com Node.js e Express.
 
 ## Documentação completa da API
 
