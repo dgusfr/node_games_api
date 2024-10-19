@@ -76,35 +76,20 @@ app.delete("/game/:id", (request, response) => {
   }
 });
 
-// app.put("/game/:id", (request, response) => {
-//   if (isNaN(request.params.id)) {
-//     response.sendStatus(400);
-//   } else {
-//     const id = parseInt(request.params.id);
+app.put("/game/:id", (request, response) => {
+  const id = parseInt(request.params.id);
 
-//     const game = dataBase.games.find((g) => g.id == id);
+  if (isNaN(id)) {
+    return response.status(400).send("400 : Bad Request - ID inválido");
+  }
 
-//     if (game != undefined) {
-//       const { title, price, year } = request.body;
+  const game = dataBase.games[id];
+  if (!game) {
+    return response.status(404).send("404 : Not Found - Jogo não encontrado");
+  }
 
-//       if (title != undefined) {
-//         game.title = title;
-//       }
-
-//       if (price != undefined) {
-//         game.price = price;
-//       }
-
-//       if (year != undefined) {
-//         game.year = year;
-//       }
-
-//       response.sendStatus(200);
-//     } else {
-//       response.sendStatus(404);
-//     }
-//   }
-// });
+  const { title, year, price } = request.body;
+});
 
 app.listen(3000, () => {
   console.log("API Rodando na porta 3000");
