@@ -13,7 +13,7 @@ async function getAllGames() {
     console.log("Lista dos games:", response.data);
   } catch (error) {
     console.error(
-      `Erro ao remover jogo com ID ${id}:`,
+      "Erro ao listar jogos:",
       error.response ? error.response.data : error.message
     );
   }
