@@ -88,9 +88,9 @@ Atualiza as informações de um jogo existente.
 - **Método**: `PUT`
 - **Parâmetros de URL**:
   - `id`: ID do jogo.
-- **Cabeçalhos Requeridos**:
+- **(Header) Cabeçalhos Requeridos**:
   - `Content-Type: application/json`
-- **Dados do Corpo (JSON)**:
+- **(Body) Dados do Corpo da requisição em JSON**:
   - `title` (string, opcional): Novo título do jogo.
   - `year` (number, opcional): Novo ano de lançamento.
   - `price` (number, opcional): Novo preço do jogo.
