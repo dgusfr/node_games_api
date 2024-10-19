@@ -127,3 +127,34 @@ Deleta um jogo pelo ID.
    ```bash
    git clone https://github.com/seu-usuario/seu-repositorio.git
    ```
+
+2. **Instale as dependências:**
+
+   ```bash
+   cd seu-repositorio
+   npm install
+   ```
+
+3. **Inicie o servidor:**
+
+   ```bash
+   node index.js
+   ```
+
+4. **O servidor será iniciado na porta 3000.**
+
+### Teste API
+
+Você pode usar ferramentas como Postman ou Insomnia para fazer requisições aos endpoints da API.
+
+Executar os testes automatizados ou pode utilizar os testes automatizados usando:
+
+```bash
+node api_tests.js
+```
+
+Isso irá executar uma série de testes para verificar se a API está funcionando corretamente.
+
+# Autor
+
+Desenvolvido por Diego Franco
