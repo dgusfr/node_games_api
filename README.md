@@ -15,7 +15,7 @@ Uma API simples para gerenciar jogos, permitindo operações CRUD (Create, Read,
 
 <div style="display: flex; flex-direction: row;">
   <div style="margin-right: 20px; display: flex; justify-content: flex-start;">
-    <img src="img/js.png" alt="Logo JavaScript" width="250"/>
+    <img src="img/js.png" alt="Logo JavaScript" width="220"/>
   </div>
   <div style="margin-right: 20px; display: flex; justify-content: flex-start;">
     <img src="img/node.png" alt="Logo Node.js" width="250"/>
@@ -31,6 +31,18 @@ Uma API simples para gerenciar jogos, permitindo operações CRUD (Create, Read,
 Este projeto é uma API simples desenvolvida com Node.js e Express que permite gerenciar uma lista de jogos.
 
 A API suporta operações CRUD (Create, Read, Update, Delete) em um banco de dados em memória para manipular informações de jogos, como título, ano e preço. Ela serve como um exemplo básico para entender como criar uma API REST com Node.js e Express.
+
+#### DataBase Local:
+
+```
+const dataBase = {
+  games: {
+    1: { title: "Call of Duty MW", year: 2019, price: 60 },
+    2: { title: "Sea of Thieves", year: 2018, price: 40 },
+    3: { title: "Minecraft", year: 2012, price: 20 },
+  },
+};
+```
 
 ## Documentação completa da API
 
@@ -156,6 +168,33 @@ node api_tests.js
 ```
 
 Isso irá executar uma série de testes para verificar se a API está funcionando corretamente.
+
+#### Retorno esperado do teste automatizado:
+
+```
+Iniciando os testes da API...
+Lista dos games: {
+  '1': { title: 'Call of Duty MW', year: 2019, price: 60 },
+  '2': { title: 'Sea of Thieves', year: 2018, price: 40 },
+  '3': { title: 'Minecraft', year: 2012, price: 20 }
+}
+Detalhes do game com ID 1: { title: 'Call of Duty MW', year: 2019, price: 60 }
+Novo Jogo Adicionado: { message: 'Jogo adicionado com sucesso', id: 4 }
+Jogo com ID 2 Atualizado: Jogo atualizado com sucesso
+Lista dos games: {
+  '1': { title: 'Call of Duty MW', year: 2019, price: 60 },
+  '2': { title: 'The Witcher 3: Wild Hunt', year: 2015, price: 55 },
+  '3': { title: 'Minecraft', year: 2012, price: 20 },
+  '4': { title: 'Medal of Honor', year: 2007, price: 250 }
+}
+Jogo com ID 1 removido com sucesso.
+Lista dos games: {
+  '2': { title: 'The Witcher 3: Wild Hunt', year: 2015, price: 55 },
+  '3': { title: 'Minecraft', year: 2012, price: 20 },
+  '4': { title: 'Medal of Honor', year: 2007, price: 250 }
+}
+Testes concluídos.
+```
 
 ## Autor
 
