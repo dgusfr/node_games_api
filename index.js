@@ -89,6 +89,11 @@ app.put("/game/:id", (request, response) => {
   }
 
   const { title, year, price } = request.body;
+  if (title) game.title = title;
+  if (year) game.year = year;
+  if (price) game.price = price;
+
+  response.status(200).send("Jogo atualizado com sucesso");
 });
 
 app.listen(3000, () => {
