@@ -41,6 +41,12 @@ app.post("/games", (request, response) => {
   const { title, year, price } = request.body;
   const newId = Object.keys(dataBase.games).length + 1;
 
+  if (!title || !year || !price) {
+    return response
+      .status(400)
+      .send("400 : Bad Request - Parâmetros inválidos");
+  }
+
   dataBase.games[newId] = { title, year, price };
 
   response
@@ -78,9 +84,10 @@ app.put("/game/:id", (request, response) => {
   }
 
   const { title, year, price } = request.body;
-  if (title) game.title = title;
-  if (year) game.year = year;
-  if (price) game.price = price;
+
+  if (title !== undefined) game.title = title;
+  if (year !== undefined) game.year = year;
+  if (price !== undefined) game.price = price;
 
   response.status(200).send("Jogo atualizado com sucesso");
 });

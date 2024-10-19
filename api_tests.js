@@ -57,7 +57,7 @@ async function updateGame(id, updatedGame) {
 
 async function deleteGame(id) {
   try {
-    await request.delete(`/game/${id}`);
+    const response = await request.delete(`/game/${id}`);
     console.log(`Jogo com ID ${id} removido com sucesso.`);
   } catch (error) {
     console.error(
@@ -75,9 +75,9 @@ async function runTests() {
   await getGameById(1);
 
   const novoJogo = {
-    title: "The Witcher 3",
-    year: 2015,
-    price: 50,
+    title: "Medal of Honor",
+    year: 2007,
+    price: 250,
   };
   await addGame(novoJogo);
 
@@ -86,7 +86,7 @@ async function runTests() {
     year: 2015,
     price: 55,
   };
-  await updateGame(1, atualizacaoJogo);
+  await updateGame(2, atualizacaoJogo);
   await getAllGames();
 
   await deleteGame(1);
