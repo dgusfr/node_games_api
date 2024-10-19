@@ -1,4 +1,5 @@
 const axios = require("axios");
+const { request } = require("express");
 
 const resquest = axios.create({
   baseURL: "http://localhost:3000",
@@ -14,6 +15,18 @@ async function getAllGames() {
   } catch (error) {
     console.error(
       "Erro ao listar jogos:",
+      error.response ? error.response.data : error.message
+    );
+  }
+}
+
+async function getGameById(id) {
+  try {
+    const response = request.get(`/games/${id}`);
+    console.log(`Detalhes do game com ID ${id}: `, response.data);
+  } catch (error) {
+    console.error(
+      `Erro ao obter jogo com ID ${id}:`,
       error.response ? error.response.data : error.message
     );
   }
