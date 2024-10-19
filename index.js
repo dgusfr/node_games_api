@@ -34,16 +34,14 @@ app.get("/game/:id", (request, response) => {
   }
 });
 
-// app.post("/game", (request, response) => {
-//   const { title, price, year } = request.body;
-//   dataBase.games.push({
-//     id: 2323,
-//     title,
-//     price,
-//     year,
-//   });
-//   response.sendStatus(200);
-// });
+app.post("/games", (request, response) => {
+  const {title, year, price } = request.body;
+  const newId = Object.keys(database.games).length + 1
+
+  database.games[newId] = {title, year, price}
+
+  response.status(201).json({ message: "Jogo adicionado com sucesso", id: newId })
+}
 
 // app.delete("/game/:id", (request, response) => {
 //   if (isNaN(request.params.id)) {
