@@ -67,9 +67,9 @@ Adiciona um novo jogo.
 
 - **URL**: `/games`
 - **Método**: `POST`
-- **Cabeçalhos Requeridos**:
+- **(Header) Cabeçalhos Requeridos**:
   - `Content-Type: application/json`
-- **Dados do Corpo (JSON)**:
+- **(Body) Dados do Corpo da requisição em JSON**:
   - `title` (string): Título do jogo.
   - `year` (number): Ano de lançamento.
   - `price` (number): Preço do jogo.
