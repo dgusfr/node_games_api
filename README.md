@@ -68,6 +68,8 @@ const dataBase = {
 
 
 ### Endpoints
+<br>
+
 
 #### GET /games
 
