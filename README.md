@@ -210,6 +210,8 @@ Lista dos games: {
 Testes concluídos.
 ```
 
+<br>
+
 ## Autor
 
 Desenvolvido por Diego Franco
