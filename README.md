@@ -19,6 +19,8 @@ Uma API simples para gerenciar jogos, permitindo operações CRUD (Create, Read,
 
 ## Tecnologias Utilizadas
 
+<br>
+
 <div style="display: flex; flex-direction: row;">
   <div style="margin-right: 20px; display: flex; justify-content: flex-start;">
     <img src="img/js.png" alt="Logo JavaScript" width="220"/>
