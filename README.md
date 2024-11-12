@@ -15,6 +15,8 @@ Uma API simples para gerenciar jogos, permitindo operações CRUD (Create, Read,
 - [Como Usar](#como-usar)
 - [Autor](#autor)
 
+<br>
+
 ## Tecnologias Utilizadas
 
 <div style="display: flex; flex-direction: row;">
