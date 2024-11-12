@@ -30,6 +30,8 @@ Uma API simples para gerenciar jogos, permitindo operações CRUD (Create, Read,
   </div>
 </div>
 
+<br>
+
 ## Status
 
 ![Concluído](http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge)
