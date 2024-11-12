@@ -45,6 +45,9 @@ Este projeto é uma API simples desenvolvida com Node.js e Express que permite g
 
 A API suporta operações CRUD (Create, Read, Update, Delete) em um banco de dados em memória para manipular informações de jogos, como título, ano e preço. Ela serve como um exemplo básico para entender como criar uma API REST com Node.js e Express.
 
+<br>
+
+
 #### DataBase Local:
 
 ```
