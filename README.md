@@ -181,6 +181,8 @@ node api_tests.js
 
 Isso irá executar uma série de testes para verificar se a API está funcionando corretamente.
 
+<br>
+
 #### Retorno esperado do teste automatizado:
 
 ```
