@@ -101,6 +101,8 @@ Retorna os detalhes de um jogo específico pelo ID.
   - **Código**: 404 Not Found
     - **Conteúdo**: Mensagem indicando que o jogo não foi encontrado.
 
+<br>
+
 #### POST /games
 
 Adiciona um novo jogo.
