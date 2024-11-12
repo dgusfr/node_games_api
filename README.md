@@ -36,6 +36,9 @@ Uma API simples para gerenciar jogos, permitindo operações CRUD (Create, Read,
 
 ![Concluído](http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge)
 
+<br>
+
+
 ## Descrição
 
 Este projeto é uma API simples desenvolvida com Node.js e Express que permite gerenciar uma lista de jogos.
