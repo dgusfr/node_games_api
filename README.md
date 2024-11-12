@@ -167,30 +167,7 @@ Deleta um jogo pelo ID.
     - **Conteúdo**: Mensagem indicando que o jogo não foi encontrado.
 
 
-
 <br>
-## Como Usar
-
-1. **Clone o repositório:**
-
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   ```
-
-2. **Instale as dependências:**
-
-   ```bash
-   cd seu-repositorio
-   npm install
-   ```
-
-3. **Inicie o servidor:**
-
-   ```bash
-   node index.js
-   ```
-
-4. **O servidor será iniciado na porta 3000.**
 
 ### Teste de API
 
