@@ -147,6 +147,8 @@ Atualiza as informações de um jogo existente.
   - **Código**: 404 Not Found
     - **Conteúdo**: Mensagem indicando que o jogo não foi encontrado.
 
+<br>
+
 #### DELETE /game/:id
 
 Deleta um jogo pelo ID.
