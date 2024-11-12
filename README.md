@@ -122,6 +122,8 @@ Adiciona um novo jogo.
   - **Código**: 400 Bad Request
     - **Conteúdo**: Mensagem indicando que os parâmetros são inválidos.
 
+<br>
+
 #### PUT /game/:id
 
 Atualiza as informações de um jogo existente.
