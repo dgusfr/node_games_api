@@ -81,6 +81,9 @@ Retorna a lista de todos os jogos.
   - **Código**: 200 OK
     - **Conteúdo**: JSON com a lista de jogos.
 
+<br>
+
+
 #### GET /game/:id
 
 Retorna os detalhes de um jogo específico pelo ID.
