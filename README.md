@@ -38,7 +38,6 @@ Uma API simples para gerenciar jogos, permitindo operações CRUD (Create, Read,
 
 <br>
 
-
 ## Descrição
 
 Este projeto é uma API simples desenvolvida com Node.js e Express que permite gerenciar uma lista de jogos.
@@ -46,7 +45,6 @@ Este projeto é uma API simples desenvolvida com Node.js e Express que permite g
 A API suporta operações CRUD (Create, Read, Update, Delete) em um banco de dados em memória para manipular informações de jogos, como título, ano e preço. Ela serve como um exemplo básico para entender como criar uma API REST com Node.js e Express.
 
 <br>
-
 
 #### DataBase Local:
 
@@ -62,14 +60,13 @@ const dataBase = {
 
 <br>
 
-
 ## Documentação completa da API
-<br>
 
+<br>
 
 ### Endpoints
-<br>
 
+<br>
 
 #### GET /games
 
@@ -82,7 +79,6 @@ Retorna a lista de todos os jogos.
     - **Conteúdo**: JSON com a lista de jogos.
 
 <br>
-
 
 #### GET /game/:id
 
@@ -165,7 +161,6 @@ Deleta um jogo pelo ID.
     - **Conteúdo**: Mensagem indicando que o ID é inválido.
   - **Código**: 404 Not Found
     - **Conteúdo**: Mensagem indicando que o jogo não foi encontrado.
-
 
 <br>
 
